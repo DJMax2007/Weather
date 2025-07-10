@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <input type="text" id="search" placeholder="Enter city..." />
+      <div class="current-weather">
+        <div id="current-icon" class="weather-icon">☀️</div>
+        <div id="current-temp" class="temp">-- °C</div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="toggle-buttons">
+        <button id="btn-day" class="active">Day</button>
+        <button id="btn-week">Week</button>
+      </div>
+      <div id="weather-details">
+        <!-- hourly or daily data will be injected here -->
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
