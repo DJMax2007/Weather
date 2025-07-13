@@ -9,10 +9,21 @@
 <body>
   <div class="container">
     <aside class="sidebar">
-      <input type="text" id="search" placeholder="Enter city..." />
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Enter city..." autocomplete="on" />
+      </div>
+
+      <div class="toggle-buttons">
+        <button id="search-btn">Get Weather</button>
+      </div>
+
       <div class="current-weather">
         <div id="current-icon" class="weather-icon">☀️</div>
         <div id="current-temp" class="temp">-- °C</div>
+      </div>
+
+      <div class="name">
+        <label id="city-label">City</label>
       </div>
     </aside>
 
