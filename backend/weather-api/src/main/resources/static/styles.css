@@ -17,13 +17,14 @@ body {
 
 .container {
   display: flex;
-  width: 90vw;
   max-width: 1000px;
+  width: 100%;
   height: 80vh;
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
 }
 
 /* Sidebar left - 25% */
@@ -61,10 +62,13 @@ body {
 
 /* Main content right - 75% */
 .main-content {
-  flex: 1 1 75%;
+  flex: 1 1 65%;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  min-width: 0; /* Prevent overflow in flexbox */
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .search-container {
@@ -102,11 +106,16 @@ body {
 }
 
 #weather-details {
-  flex-grow: 1;
-  overflow-x: auto;
+  width: 100%;
+  white-space: nowrap;
   display: flex;
-  gap: 15px;
-  padding-bottom: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 10px 10px 0;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* Hourly/daily items */
@@ -114,9 +123,11 @@ body {
   background: #e9efff;
   padding: 15px;
   border-radius: 12px;
-  min-width: 80px;
   text-align: center;
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  min-width: 90px;
+  max-width: 100px;
+  margin-right: 8px;
 }
 
 .weather-item .icon {
@@ -135,8 +146,21 @@ body {
   font-size: 1.2rem;
 }
 
+/*!* Day label *!*/
+/*.date-label {*/
+/*  width: 100%;*/
+/*  text-align: left;*/
+/*  font-weight: bold;*/
+/*  padding: 5px 1px 5px;*/
+/*  font-size: 1rem;*/
+/*  color: #444;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*}*/
+
+/* Dropdown styles */
 #city-dropdown {
-  list-style: none;    /* removes bullet points */
+  list-style: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -161,7 +185,25 @@ body {
   background-color: darkblue;
 }
 
-/* Responsive */
+#weekly-forecast {
+  margin-top: 20px;
+}
+
+.week-item {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  background: #e9efff;
+  padding: 6px;
+}
+
+.bar {
+  height: 10px;
+  background: linear-gradient(to right, blue, red);
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
 @media (max-width: 700px) {
   .container {
     flex-direction: column;
@@ -175,9 +217,4 @@ body {
     width: 100%;
     padding: 10px;
   }
-
-  #weather-details {
-    flex-wrap: nowrap;
-  }
-
 }
