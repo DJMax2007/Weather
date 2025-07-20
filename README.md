@@ -3,27 +3,27 @@
 A responsive weather web application that displays current, hourly, and weekly forecasts using the [Open-Meteo API](https://open-meteo.com/).  
 The project is built with:
 
-- ✅ **Spring Boot** (Java) — backend (in progress)
+- ✅ **Spring Boot** (Java) — backend
 - ✅ **HTML/CSS/JS** — responsive frontend
 - ✅ **Open-Meteo API** — weather data source
 
 ---
-<!--
-## 📸 Preview
+# 📸 Preview
+<img width="1919" height="865" alt="image" src="https://github.com/user-attachments/assets/e5e829a0-5e43-43ef-aefe-552e33e76036" />
 
-![screenshot or GIF here – optional]
+<img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/dcc8046d-a43b-440f-9fb6-5e32eac9697d" />
 
 ---
--->
 ## ✨ Features
 
 - 🔍 Search for any location
 - 🌡️ View current temperature and weather condition
 - 🕒 Toggle between:
-  - **Day view** — hourly temperatures (scrollable)
-  - **Week view** — 7-day highs & lows
+  - **°C** — Celsius
+  - **°F** — Fahrenheit
 - 📱 Fully responsive for mobile and desktop
 - 🎨 Clean UI
+- View the Highest and lowest temperature for the week
 
 ---
 
