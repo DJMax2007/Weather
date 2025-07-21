@@ -5,7 +5,7 @@ FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
 # Copy the built jar into the image
-COPY target/weatherapi-0.0.1-SNAPSHOT.jar app.jar
+COPY target/weather-api-0.0.1-SNAPSHOT.jar app.jar
 
 # Use Render's PORT environment variable
 ENV PORT=8080
