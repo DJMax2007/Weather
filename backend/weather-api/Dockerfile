@@ -1,15 +1,12 @@
-# Use a reliable JDK 17 base image (works with any IDE)
-FROM eclipse-temurin:17-jdk
-
-# Set working directory in container
+# Stage 1: Build the app with Maven
+FROM maven:3.8.6-openjdk-17 AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copy the built jar into the image
-COPY target/weather-api-0.0.1-SNAPSHOT.jar app.jar
-
-# Use Render's PORT environment variable
-ENV PORT=8080
-EXPOSE 8080
-
-# Start your Spring Boot application
+# Stage 2: Create the final image to run the app
+FROM eclipse-temurin:17-jdk
+WORKDIR /app
+COPY --from=build /app/target/weather-api-0.0.1-SNAPSHOT.jar app.jar
 CMD ["java", "-jar", "app.jar"]
